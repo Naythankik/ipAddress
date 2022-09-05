@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --heading-color: hsl(0, 0%, 17%);
+  --sub-heading-color: hsl(0, 0%, 59%);
+}
+body {
+  font-family: "Rubik", sans-serif;
+  height: 100vh;
+  position: relative;
+  background: url("./images/pattern-bg.png") no-repeat;
+  /* background-size: 100% 30%; */
+  background-size: cover;
+  width: 100%;
+}
+div.container {
+  display: flex;
+  justify-content: center;
+  height: 35%;
+}
+section.child {
+  display: grid;
+  width: 70%;
+  justify-items: center;
+  padding: 30px 0 0 0;
+  row-gap: 20px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+section.child > p {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+form {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+label[for="search"] {
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
+  grid-template-columns: 4.5fr 0.5fr;
+}
+label[for="search"] > input,
+label[for="search"] > button {
+  background: white;
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 10px 0 0 10px;
+  width: 100%;
+}
+label[for="search"] > button {
+  background: black;
+  border-radius: 0 10px 10px 0;
+}
+div.display {
+  width: 100%;
+  background: whitesmoke;
+  padding: 35px 5px;
+  border-radius: 20px;
+  display: flex;
+  gap: 5px;
+}
+div.tracker-info {
+  display: grid;
+  gap: 10px;
+  border: none;
+  outline: none;
+  border-left: 1px solid var(--sub-heading-color);
+  padding: 0 30px;
+}
+div.tracker-info:first-child {
+  border: none;
+}
+div.tracker-info h5 {
+  color: var(--sub-heading-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+}
+div.tracker-info p {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+#map {
+  height: 65%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 950px) {
+  div.container {
+    padding: 10px;
+  }
+  section.child {
+    width: 90%;
+  }
+  section.child > p {
+    font-size: 1.5rem;
+  }
+  form {
+    width: 100%;
+  }
+  label[for="search"] > input,
+  label[for="search"] > button {
+    padding: 10px;
+  }
+  div.display {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 10px;
+  }
+  div.tracker-info {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    gap: 3px;
+    padding: 5px;
+  }
+  div.tracker-info h5 {
+    font-size: 0.7rem;
+  }
+  div.tracker-info p {
+    font-size: 1.2rem;
+  }
+  #map {
+    display: none;
+  }
+}
